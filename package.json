@@ -9,7 +9,8 @@
     "@apollo/client": "^3.8.6",
     "graphql-tag": "^2.12.6",
     "mongoose": "^7.6.3",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "vercel": "^32.5.2"
   }
 }
 
