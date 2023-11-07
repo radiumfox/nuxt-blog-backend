@@ -2,7 +2,7 @@
   "name": "apollo-server",
   "private": true,
   "scripts": {
-    "start": "node index.ts"
+    "start": "node api/index.ts"
   },
   "dependencies": {
     "@apollo/server": "^4.9.5",
