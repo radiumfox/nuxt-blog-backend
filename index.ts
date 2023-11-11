@@ -2,7 +2,7 @@ const { ApolloServer } = require("@apollo/server");
 const { startStandaloneServer } = require("@apollo/server/standalone");
 const mongoose = require("mongoose");
 const { resolvers } = require("./resolvers.ts");
-const { typeDefs } = require("../models/typeDefs.ts");
+const { typeDefs } = require("./models/typeDefs.ts");
 
 const MONGO_URI = "mongodb+srv://eteonelonga:0YlwOIihlKCAvCgW@cluster0.0qpxzjp.mongodb.net/radium_fox";
 
@@ -20,6 +20,9 @@ mongoose
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-startStandaloneServer(server).then(({ url }) => {
+
+startStandaloneServer(server, {
+  listen: { host: "0.0.0.0", port: 80, exclusive: true },
+}).then(({ url }) => {
     console.log(`Server ready at ${url}`);
 });
